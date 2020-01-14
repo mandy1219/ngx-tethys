@@ -90,15 +90,15 @@ export class ThyTreeSelectComponent implements OnInit, ControlValueAccessor {
 
     private cdkScrollables: CdkScrollable[] = [];
 
-    @ContentChild('thyTreeSelectTriggerDisplay')
+    @ContentChild('thyTreeSelectTriggerDisplay', { static: true })
     thyTreeSelectTriggerDisplayRef: TemplateRef<any>;
 
-    @ContentChild('treeNodeTemplate')
+    @ContentChild('treeNodeTemplate', { static: true })
     treeNodeTemplateRef: TemplateRef<any>;
 
-    @ViewChild(CdkOverlayOrigin) cdkOverlayOrigin: CdkOverlayOrigin;
+    @ViewChild(CdkOverlayOrigin, { static: true }) cdkOverlayOrigin: CdkOverlayOrigin;
 
-    @ViewChild(CdkConnectedOverlay) cdkConnectedOverlay: CdkConnectedOverlay;
+    @ViewChild(CdkConnectedOverlay, { static: true }) cdkConnectedOverlay: CdkConnectedOverlay;
 
     @Input()
     set thyTreeNodes(value: ThyTreeSelectNode[]) {

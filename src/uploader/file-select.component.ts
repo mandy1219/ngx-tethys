@@ -27,7 +27,7 @@ export class ThyFileSelectComponent implements OnInit, OnDestroy {
 
     @Output() thyOnFileSelect = new EventEmitter();
 
-    @ViewChild('fileInput') fileInput: ElementRef<HTMLInputElement>;
+    @ViewChild('fileInput', { static: true }) fileInput: ElementRef<HTMLInputElement>;
 
     @Input()
     set thyMultiple(value: boolean) {

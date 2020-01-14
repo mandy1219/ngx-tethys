@@ -45,7 +45,7 @@ class BasicSelectControlComponent {
 
     thySize = null;
 
-    @ViewChild(ThySelectControlComponent)
+    @ViewChild(ThySelectControlComponent, { static: true })
     selectControlComponent: ThySelectControlComponent;
 }
 

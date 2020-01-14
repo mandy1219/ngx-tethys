@@ -80,7 +80,7 @@ function buildDataList() {
     encapsulation: ViewEncapsulation.None
 })
 class TestTransferComponent {
-    @ViewChild('comp') comp: ThyTransferComponent;
+    @ViewChild('comp', { static: true }) comp: ThyTransferComponent;
     dataSource: any[] = buildDataList();
     titles = ['Source', 'Target'];
 
@@ -99,7 +99,7 @@ class TestTransferComponent {
     `
 })
 class TestTransferCustomRenderComponent {
-    @ViewChild('comp') comp: ThyTransferComponent;
+    @ViewChild('comp', { static: true }) comp: ThyTransferComponent;
     dataSource: any[] = buildDataList();
 }
 

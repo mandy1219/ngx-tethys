@@ -128,7 +128,7 @@ class BasicTreeSelectComponent {
 
     thyPlaceholder = '';
 
-    @ViewChild('treeSelect')
+    @ViewChild('treeSelect', { static: true })
     treeSelect: ThyTreeSelectComponent;
 }
 
@@ -227,7 +227,7 @@ class PlaceHolderTreeSelectComponent {
 
     thyPlaceholder = 'this is a placeholder';
 
-    @ViewChild('treeSelect')
+    @ViewChild('treeSelect', { static: true })
     treeSelect: ThyTreeSelectComponent;
 }
 
@@ -323,7 +323,7 @@ class NgModelTreeSelectComponent {
 
     multiple = false;
 
-    @ViewChild('treeSelect')
+    @ViewChild('treeSelect', { static: true })
     treeSelect: ThyTreeSelectComponent;
 }
 

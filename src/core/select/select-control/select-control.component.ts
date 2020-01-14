@@ -139,7 +139,7 @@ export class ThySelectControlComponent implements OnInit {
     @Output()
     public thyOnClear = new EventEmitter<Event>();
 
-    @ViewChild('inputElement')
+    @ViewChild('inputElement', { static: true })
     inputElement: ElementRef;
 
     get selectedValueStyle(): { [key: string]: string } {

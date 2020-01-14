@@ -42,10 +42,10 @@ class WithViewContainerDirective {
     `
 })
 class WithChildViewContainerComponent {
-    @ViewChild(WithViewContainerDirective, {})
+    @ViewChild(WithViewContainerDirective, { static: true })
     childWithViewContainer: WithViewContainerDirective;
 
-    @ViewChild('openPopoverOrigin')
+    @ViewChild('openPopoverOrigin', { static: true })
     openPopoverOrigin: HTMLElement;
 
     get childViewContainer() {

@@ -25,7 +25,7 @@ import { helpers } from '../util';
     }
 })
 export class ThySlideContainerComponent extends ThyUpperOverlayContainer {
-    @ViewChild(CdkPortalOutlet)
+    @ViewChild(CdkPortalOutlet, { static: true })
     portalOutlet: CdkPortalOutlet;
 
     animationOpeningDone: Observable<AnimationEvent>;

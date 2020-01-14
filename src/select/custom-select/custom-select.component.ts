@@ -143,7 +143,7 @@ export class ThySelectCustomComponent
         );
     }) as Observable<ThyOptionSelectionChangeEvent>;
 
-    @ViewChild(CdkConnectedOverlay) cdkConnectedOverlay: CdkConnectedOverlay;
+    @ViewChild(CdkConnectedOverlay, { static: true }) cdkConnectedOverlay: CdkConnectedOverlay;
 
     @HostBinding('class.thy-select-custom') isSelectCustom = true;
 
@@ -211,11 +211,11 @@ export class ThySelectCustomComponent
 
     @Input() thySortComparator: (a: ThyOptionComponent, b: ThyOptionComponent, options: ThyOptionComponent[]) => number;
 
-    @ContentChild('selectedDisplay') selectedValueDisplayRef: TemplateRef<any>;
+    @ContentChild('selectedDisplay', { static: true }) selectedValueDisplayRef: TemplateRef<any>;
 
-    @ViewChild('trigger', { read: ElementRef }) trigger: ElementRef<any>;
+    @ViewChild('trigger', { read: ElementRef, static: true }) trigger: ElementRef<any>;
 
-    @ViewChild('panel', { read: ElementRef }) panel: ElementRef<any>;
+    @ViewChild('panel', { read: ElementRef, static: true }) panel: ElementRef<any>;
 
     @ContentChildren(ThyOptionComponent, { descendants: true }) options: QueryList<ThyOptionComponent>;
 
@@ -284,16 +284,11 @@ export class ThySelectCustomComponent
     }
 
     ngAfterContentInit() {
-        this.options.changes
-            .pipe(
-                startWith(null),
-                takeUntil(this.destroy$)
-            )
-            .subscribe(() => {
-                this.resetOptions();
-                this.initializeSelection();
-                this.initKeyManager();
-            });
+        this.options.changes.pipe(startWith(null), takeUntil(this.destroy$)).subscribe(() => {
+            this.resetOptions();
+            this.initializeSelection();
+            this.initKeyManager();
+        });
     }
 
     public get isShowEmptySearchResult(): boolean {

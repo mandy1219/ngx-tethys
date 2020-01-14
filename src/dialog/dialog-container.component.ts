@@ -49,7 +49,7 @@ export class ThyDialogContainerComponent extends ThyUpperOverlayContainer {
     animationOpeningDone: Observable<AnimationEvent>;
     animationClosingDone: Observable<AnimationEvent>;
 
-    @ViewChild(CdkPortalOutlet)
+    @ViewChild(CdkPortalOutlet, { static: true })
     portalOutlet: CdkPortalOutlet;
 
     @HostBinding(`attr.id`)

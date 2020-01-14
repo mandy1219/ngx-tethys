@@ -1,33 +1,27 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": false,
     "baseUrl": "./",
-    "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
     "module": "es2015",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "skipLibCheck": false,
+    "importHelpers": true,
+    "resolveJsonModule": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"]
   },
   "angularCompilerOptions": {
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
-    "fullTemplateTypeCheck": true
+    "fullTemplateTypeCheck": true,
+    "resolveJsonModule": true
   },
-  "files": [
-    "./scripts/typings.d.ts",
-    "./src/index.ts"
-  ]
+  "files": ["./scripts/typings.d.ts", "./src/index.ts"]
 }

@@ -2,7 +2,6 @@ import { Component, TemplateRef, OnInit, HostBinding } from '@angular/core';
 import { DateRangeItemInfo } from '../../../../../src/date-range/date-range.class';
 import { helpers } from '../../../../../src/util';
 import { ThyDialogRef, ThyDialog } from '../../../../../src/dialog';
-import { debug } from 'util';
 
 @Component({
     selector: 'demo-dialog-content',

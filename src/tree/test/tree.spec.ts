@@ -184,7 +184,7 @@ describe('ThyTreeComponent', () => {
     `
 })
 class TestBasicTreeComponent {
-    @ViewChild('tree') tree: ThyTreeComponent;
+    @ViewChild('tree', { static: true }) tree: ThyTreeComponent;
 
     treeNodes = treeNodes;
 

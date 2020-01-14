@@ -67,12 +67,12 @@ import { injectDefaultSvgIconSet, bypassSanitizeProvider } from '../../core/test
     `
 })
 class ThyDemoMenuComponent {
-    @ViewChild(ThyMenuDividerComponent) divider: ThyMenuDividerComponent;
-    @ViewChild(ThyMenuGroupComponent) group: ThyMenuGroupComponent;
-    @ViewChild(ThyMenuItemComponent) item: ThyMenuItemComponent;
-    @ViewChild(ThyMenuItemIconComponent) icon: ThyMenuItemIconComponent;
-    @ViewChild(ThyMenuItemActionComponent) action: ThyMenuItemActionComponent;
-    @ViewChild(ThyMenuItemNameComponent) name: ThyMenuItemNameComponent;
+    @ViewChild(ThyMenuDividerComponent, { static: true }) divider: ThyMenuDividerComponent;
+    @ViewChild(ThyMenuGroupComponent, { static: true }) group: ThyMenuGroupComponent;
+    @ViewChild(ThyMenuItemComponent, { static: true }) item: ThyMenuItemComponent;
+    @ViewChild(ThyMenuItemIconComponent, { static: true }) icon: ThyMenuItemIconComponent;
+    @ViewChild(ThyMenuItemActionComponent, { static: true }) action: ThyMenuItemActionComponent;
+    @ViewChild(ThyMenuItemNameComponent, { static: true }) name: ThyMenuItemNameComponent;
 
     click() {}
 }

@@ -73,7 +73,7 @@ export class ThyTransferComponent implements OnInit {
 
     @Output() thyChange: EventEmitter<ThyTransferChangeEvent> = new EventEmitter<ThyTransferChangeEvent>();
 
-    @ContentChild('renderTemplate') templateRef: TemplateRef<any>;
+    @ContentChild('renderTemplate', { static: true }) templateRef: TemplateRef<any>;
 
     ngOnInit() {}
 

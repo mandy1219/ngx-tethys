@@ -11,5 +11,7 @@ export class DemoVariablesSectionComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        debugger;
+    }
 }

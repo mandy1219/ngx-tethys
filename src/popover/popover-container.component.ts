@@ -34,7 +34,7 @@ import { filter } from 'rxjs/operators';
     }
 })
 export class ThyPopoverContainerComponent extends ThyUpperOverlayContainer {
-    @ViewChild(CdkPortalOutlet)
+    @ViewChild(CdkPortalOutlet, { static: true })
     portalOutlet: CdkPortalOutlet;
 
     /** State of the popover animation. */

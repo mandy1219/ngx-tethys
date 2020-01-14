@@ -12,7 +12,6 @@ import { ThyNotifyContainerComponent } from './notify.container.component';
 import { ComponentLoader } from 'ngx-bootstrap/component-loader';
 import { Subject } from 'rxjs';
 import { DomPortalOutlet, ComponentPortal } from '@angular/cdk/portal';
-import { TData } from '@angular/core/src/render3/interfaces/view';
 
 const NOTIFY_OPTION_DEFAULT = {
     duration: 4500,

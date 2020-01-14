@@ -65,7 +65,7 @@ export class ThySidebarComponent implements OnInit {
         }
     }
 
-    @ViewChild('dragRef') dragRef: any;
+    @ViewChild('dragRef', { static: true }) dragRef: any;
 
     dragStartedX: number;
 

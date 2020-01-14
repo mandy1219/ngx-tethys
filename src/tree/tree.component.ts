@@ -116,7 +116,7 @@ export class ThyTreeComponent implements ControlValueAccessor, OnInit, OnChanges
 
     @Output() thyOnDragDrop: EventEmitter<ThyTreeDragDropEvent> = new EventEmitter<ThyTreeDragDropEvent>();
 
-    @ContentChild('treeNodeTemplate')
+    @ContentChild('treeNodeTemplate', { static: true })
     set templateRef(template: TemplateRef<any>) {
         if (template) {
             this._templateRef = template;
@@ -127,7 +127,7 @@ export class ThyTreeComponent implements ControlValueAccessor, OnInit, OnChanges
         return this._templateRef;
     }
 
-    @ContentChild('emptyChildrenTemplate') emptyChildrenTemplate: TemplateRef<any>;
+    @ContentChild('emptyChildrenTemplate', { static: true }) emptyChildrenTemplate: TemplateRef<any>;
     set emptyChildrenTemplateRef(template: TemplateRef<any>) {
         if (template) {
             this._emptyChildrenTemplateRef = template;

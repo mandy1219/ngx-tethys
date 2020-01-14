@@ -55,7 +55,7 @@ class BasicSelectComponent {
     ];
     control = new FormControl();
     isRequired: boolean;
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 
@@ -94,8 +94,8 @@ class MultipleSelectComponent {
     ];
     vegetables: any[] = [{ value: 'potatoes', viewValue: 'Potatoes' }];
 
-    @ViewChild('Foods') foodsComponent: ThySelectCustomComponent;
-    @ViewChild('Vegetables') vegetablesComponent: ThySelectCustomComponent;
+    @ViewChild('Foods', { static: true }) foodsComponent: ThySelectCustomComponent;
+    @ViewChild('Vegetables', { static: true }) vegetablesComponent: ThySelectCustomComponent;
 }
 
 @Component({
@@ -117,7 +117,7 @@ class NgModelSelectComponent {
     ];
     isDisabled: boolean;
 
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 
@@ -167,7 +167,7 @@ class SingleSelectWithPreselectedArrayValuesComponent {
 
     selectedFoods = this.foods[1].value;
 
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 
@@ -226,7 +226,7 @@ class SelectWithSearchComponent {
     thyShowSearch = false;
     control = new FormControl();
     isRequired: boolean;
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 
@@ -271,7 +271,7 @@ class SelectWithSearchUseSearchKeyComponent {
     ];
     thyShowSearch = true;
     control = new FormControl();
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 
@@ -294,15 +294,21 @@ class SelectWithSearchAndGroupComponent {
     pokemonTypes = [
         {
             name: 'Grass',
-            pokemon: [{ value: 'bulbasaur-0', viewValue: 'Bulbasaur' }, { value: 'cat-0', viewValue: 'Cat' }]
+            pokemon: [
+                { value: 'bulbasaur-0', viewValue: 'Bulbasaur' },
+                { value: 'cat-0', viewValue: 'Cat' }
+            ]
         },
         {
             name: 'animals',
-            pokemon: [{ value: 'pet-0', viewValue: 'Pet' }, { value: 'monkey-0', viewValue: 'Monkey' }]
+            pokemon: [
+                { value: 'pet-0', viewValue: 'Pet' },
+                { value: 'monkey-0', viewValue: 'Monkey' }
+            ]
         }
     ];
 
-    @ViewChild(ThySelectCustomComponent)
+    @ViewChild(ThySelectCustomComponent, { static: true })
     select: ThySelectCustomComponent;
 }
 
@@ -342,7 +348,7 @@ class SelectWithSearchAndServerSearchComponent {
     selected = this.foods[7];
     thyShowSearch = true;
     control = new FormControl();
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
     thyOnSearch = jasmine.createSpy('thyServerSearch callback');
 }
@@ -376,7 +382,7 @@ class SelectEimtOptionsChangesComponent {
     ];
     control = new FormControl();
     isRequired: boolean;
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 
@@ -400,7 +406,7 @@ class SelectWithExpandStatusComponent {
     foods: any[] = [{ value: 'pizza-1', viewValue: 'Pizza' }];
     control = new FormControl();
     thyOnExpandStatusChange = jasmine.createSpy('thyOnExpandStatusChange callback');
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
 }
 
 @Component({
@@ -427,7 +433,7 @@ class SelectWithThyModeComponent {
 
     selectedFoods = null;
 
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 
@@ -463,7 +469,7 @@ class SelectWithThySortComparatorComponent {
 
     selectedFoods = null;
 
-    @ViewChild(ThySelectCustomComponent) select: ThySelectCustomComponent;
+    @ViewChild(ThySelectCustomComponent, { static: true }) select: ThySelectCustomComponent;
     @ViewChildren(ThyOptionComponent) options: QueryList<ThyOptionComponent>;
 }
 

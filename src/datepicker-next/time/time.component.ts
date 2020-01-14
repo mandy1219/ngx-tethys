@@ -9,23 +9,10 @@ import {
     InjectionToken,
     Injector
 } from '@angular/core';
-import {
-    ComponentType,
-    Overlay,
-    OverlayRef,
-    OverlayConfig,
-    ScrollStrategy
-} from '@angular/cdk/overlay';
-import {
-    TemplatePortal,
-    ComponentPortal,
-    PortalInjector
-} from '@angular/cdk/portal';
+import { ComponentType, Overlay, OverlayRef, OverlayConfig, ScrollStrategy } from '@angular/cdk/overlay';
+import { TemplatePortal, ComponentPortal, PortalInjector } from '@angular/cdk/portal';
 import { ThyDatepickerNextTimeSimplyComponent } from './time-simply.component';
-import {
-    ThyDatepickerNextStore,
-    datepickerNextActions
-} from '../datepicker-next.store';
+import { ThyDatepickerNextStore, datepickerNextActions } from '../datepicker-next.store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { getFullTimeText } from '../util';
@@ -41,7 +28,7 @@ export const CONTAINER_DATA = new InjectionToken<{}>('CONTAINER_DATA');
 export class ThyDatepickerNextTimeComponent implements OnInit, OnDestroy {
     @HostBinding('class') stylesClass = 'time-container';
 
-    @ViewChild('timeInput') timeInput: any;
+    @ViewChild('timeInput', { static: true }) timeInput: any;
 
     overlayRef: OverlayRef;
 
@@ -53,17 +40,10 @@ export class ThyDatepickerNextTimeComponent implements OnInit, OnDestroy {
 
     private ngUnsubscribe$ = new Subject();
 
-    constructor(
-        private injector: Injector,
-        private overlay: Overlay,
-        public store: ThyDatepickerNextStore
-    ) {}
+    constructor(private injector: Injector, private overlay: Overlay, public store: ThyDatepickerNextStore) {}
 
     ngOnInit() {
-        if (
-            this.store.snapshot.viewFeatureConfig.timeComponentType ===
-            DatepickerNextTimeModeType.accurate
-        ) {
+        if (this.store.snapshot.viewFeatureConfig.timeComponentType === DatepickerNextTimeModeType.accurate) {
             this._timeOverlayComponent = ThyDatepickerNextTimeAccurateComponent;
         }
 
@@ -82,9 +62,7 @@ export class ThyDatepickerNextTimeComponent implements OnInit, OnDestroy {
     private _combinationTimeText() {
         const time = this.store.snapshot.timeSelected;
         if (time) {
-            this.timeText = `${getFullTimeText(time.hour)}:${getFullTimeText(
-                time.minute
-            )}`;
+            this.timeText = `${getFullTimeText(time.hour)}:${getFullTimeText(time.minute)}`;
         }
     }
 

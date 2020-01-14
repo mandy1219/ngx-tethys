@@ -28,7 +28,7 @@ const tooltipTemplateContext = { text: 'hello world' };
     `
 })
 class ThyDemoTooltipBasicComponent {
-    @ViewChild(ThyTooltipDirective) tooltip: ThyTooltipDirective;
+    @ViewChild(ThyTooltipDirective, { static: true }) tooltip: ThyTooltipDirective;
 
     message = initialTooltipMessage;
 
@@ -59,7 +59,7 @@ class ThyDemoTooltipBasicComponent {
     `
 })
 class ThyDemoTooltipTemplateComponent {
-    @ViewChild(ThyTooltipDirective) tooltip: ThyTooltipDirective;
+    @ViewChild(ThyTooltipDirective, { static: true }) tooltip: ThyTooltipDirective;
 
     message = tooltipTemplateContext;
 

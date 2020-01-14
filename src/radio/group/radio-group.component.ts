@@ -12,7 +12,6 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { ThyRadioComponent } from '../radio.component';
 import { ThyRadioButtonComponent } from '../button/radio-button.component';
 import { UpdateHostClassService } from '../../shared';
-import { INHERITED_CLASS } from '@angular/core/src/reflection/reflection_capabilities';
 import { inputValueToBoolean } from '../../util/helpers';
 
 const buttonGroupSizeMap = {

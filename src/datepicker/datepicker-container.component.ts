@@ -18,7 +18,7 @@ export class ThyDatepickerContainerComponent implements OnInit {
     isCanTime = false;
     isMeridian = false;
 
-    @ViewChild('dpContainer')
+    @ViewChild('dpContainer', { static: true })
     private _dpContainerRef: any;
 
     constructor(

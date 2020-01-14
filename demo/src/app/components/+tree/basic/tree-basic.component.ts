@@ -19,7 +19,7 @@ export class DemoTreeBasicComponent implements OnInit {
 
     dataText: any;
 
-    @ViewChild('tree') treeComponent: ThyTreeComponent;
+    @ViewChild('tree', { static: true }) treeComponent: ThyTreeComponent;
 
     constructor() {}
 
